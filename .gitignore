@@ -1,0 +1,10 @@
+venv/
+artifacts/
+*data/
+*logs/
+*.egg-info/
+mlruns/
+__pycache__/
+
+
+.env

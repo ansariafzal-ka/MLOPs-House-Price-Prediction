@@ -1,0 +1,19 @@
+pandas
+numpy
+matplotlib
+seaborn
+xgboost
+lightgbm
+catboost
+jupyter
+
+scikit-learn
+optuna
+mlflow
+dvc
+fastapi
+uvicorn
+pydantic
+streamlit
+dotenv
+-e .
