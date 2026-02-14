@@ -1,10 +1,10 @@
 venv/
 artifacts/
-*data/
+**/*data/ 
 *logs/
-*.egg-info/
+House_Price_Prediction.egg-info/
 mlruns/
-__pycache__/
+**/__pycache__/
 
 
 .env
