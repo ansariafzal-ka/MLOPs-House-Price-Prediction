@@ -1,6 +1,6 @@
 venv/
 artifacts/
-**/*data/ 
+**/data/ 
 *logs/
 House_Price_Prediction.egg-info/
 mlruns/
