@@ -1,0 +1,72 @@
+schema: '2.0'
+stages:
+  data_ingestion:
+    cmd: python src/components/data_ingestion.py
+    deps:
+    - path: src/components/data_ingestion.py
+      hash: md5
+      md5: 4cc25ae8a55a277e57f2840999392437
+      size: 1757
+    outs:
+    - path: artifacts/raw
+      hash: md5
+      md5: 62fe5a3d5f45bb5148a3575f76dcc8ec.dir
+      size: 7305622
+      nfiles: 3
+  data_preprocessing:
+    cmd: python src/components/data_preprocessing.py
+    deps:
+    - path: artifacts/raw
+      hash: md5
+      md5: 62fe5a3d5f45bb5148a3575f76dcc8ec.dir
+      size: 7305622
+      nfiles: 3
+    - path: src/components/data_preprocessing.py
+      hash: md5
+      md5: 45504fd63b41bfc7a3362e282223f3bb
+      size: 3885
+    outs:
+    - path: artifacts/preprocessor.pkl
+      hash: md5
+      md5: 5299099e49e93e31a948e4ca7d73da49
+      size: 1253
+    - path: artifacts/processed
+      hash: md5
+      md5: 2847a5d0cad90f17ceaf7a5eb5093530.dir
+      size: 6507948
+      nfiles: 2
+  model_trainer:
+    cmd: python src/components/model_trainer.py
+    deps:
+    - path: artifacts/processed
+      hash: md5
+      md5: 2847a5d0cad90f17ceaf7a5eb5093530.dir
+      size: 6507948
+      nfiles: 2
+    - path: src/components/model_trainer.py
+      hash: md5
+      md5: 103bfd8681bd8dd7189985cc4dd195e3
+      size: 4161
+    outs:
+    - path: artifacts/models
+      hash: md5
+      md5: 765de8d6cd5ae28e2f01525ce5828a5b.dir
+      size: 9292986
+      nfiles: 1
+  model_evaluation:
+    cmd: python src/components/model_evaluation.py
+    deps:
+    - path: artifacts/models
+      hash: md5
+      md5: 765de8d6cd5ae28e2f01525ce5828a5b.dir
+      size: 9292986
+      nfiles: 1
+    - path: artifacts/processed
+      hash: md5
+      md5: 2847a5d0cad90f17ceaf7a5eb5093530.dir
+      size: 6507948
+      nfiles: 2
+    - path: src/components/model_evaluation.py
+      hash: md5
+      md5: f5ba4199e73819465446123a3c04cf8c
+      size: 2045

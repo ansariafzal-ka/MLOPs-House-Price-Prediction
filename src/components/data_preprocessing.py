@@ -15,7 +15,7 @@ from dataclasses import dataclass
 class DataPreprocessingConfig:
     train_processed_path: str = os.path.join('artifacts', 'processed', 'train.csv')
     test_processed_path: str = os.path.join('artifacts', 'processed', 'test.csv')
-    preprocessor_path: str = os.path.join('artifacts', 'preprocesser.pkl')
+    preprocessor_path: str = os.path.join('artifacts', 'preprocessor.pkl')
 
 class DataPreprocessor:
     def __init__(self):
