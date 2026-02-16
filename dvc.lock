@@ -50,7 +50,7 @@ stages:
     outs:
     - path: artifacts/models
       hash: md5
-      md5: 560b3755ef253c135c6fd31c3199a70c.dir
+      md5: 6db402736fedede8c73d67b6ce13f563.dir
       size: 9292986
       nfiles: 1
   model_evaluation:
@@ -58,7 +58,7 @@ stages:
     deps:
     - path: artifacts/models
       hash: md5
-      md5: 560b3755ef253c135c6fd31c3199a70c.dir
+      md5: 6db402736fedede8c73d67b6ce13f563.dir
       size: 9292986
       nfiles: 1
     - path: artifacts/processed

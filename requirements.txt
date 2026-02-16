@@ -1,13 +1,13 @@
 # matplotlib
 # seaborn
-# xgboost
-# lightgbm
-# catboost
 # jupyter
 
 pandas
 numpy
 scikit-learn
+catboost
+xgboost
+lightgbm
 optuna
 mlflow
 dvc
@@ -15,7 +15,7 @@ fastapi
 uvicorn
 pydantic
 streamlit
-dotenv
+python-dotenv
 boto3
-aws
+awscli
 -e .
