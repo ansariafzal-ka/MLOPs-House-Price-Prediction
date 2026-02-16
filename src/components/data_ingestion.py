@@ -1,10 +1,12 @@
 import pandas as pd
 import os
 import sys
+from dotenv import load_dotenv
 from sklearn.model_selection import train_test_split
 
 from src.logger import logging
 from src.exception import CustomException
+from src.configurations.aws_connection import AWSClient
 from dataclasses import dataclass
 
 @dataclass
@@ -15,12 +17,21 @@ class DataIngestionConfig:
 
 class DataIngestion:
     def __init__(self):
+        load_dotenv()
         self.ingestion_config = DataIngestionConfig()
+        self.bucket_name = os.getenv('BUCKET_NAME')
+        self.s3_key = os.getenv('S3_KEY')
 
     def initiate_data_ingestion(self):
         try:
             logging.info('Data ingestion started.')
-            df = pd.read_csv('C:/Users/ansar/Desktop/Workspace/Personal/MLOPs/House Price Prediction/src/notebooks/data/train.csv')
+
+            aws_client = AWSClient()
+            client = aws_client.client
+
+            resposne = client.get_object(Bucket=self.bucket_name, Key=self.s3_key)
+            df = pd.read_csv(resposne['Body'])
+            logging.info('Dataset loaded.')
             
             logging.info('Creating artifacts/raw directory.')
             os.makedirs(os.path.dirname(self.ingestion_config.raw_data_path), exist_ok=True)

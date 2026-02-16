@@ -1,0 +1,13 @@
+venv/
+**/data/ 
+*logs/
+House_Price_Prediction.egg-info/
+mlruns/
+**/__pycache__/
+catboost_info/
+*.ipynb
+notebooks/
+.git/
+
+.gitignore
+.env
