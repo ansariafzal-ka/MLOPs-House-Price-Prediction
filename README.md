@@ -12,7 +12,7 @@ A responsive Streamlit frontend provides an intuitive interface for users to inp
 
 Finally, the container is deployed on AWS infrastructure using Elastic Container Registry (ECR) for image storage and Elastic Container Service (ECS) with Fargate for serverless container orchestration, creating a fully cloud-deployed ML system.
 
-## UI
+## Frontend Interface
 
 ![Frontend Image](frontend.png)
 
