@@ -8,11 +8,11 @@ The project begins with comprehensive notebook-based experiments for EDA, data p
 
 The trained StackingRegressor model is served through a FastAPI backend with a `/predict` endpoint, providing real-time house price predictions. The entire API is containerised with Docker for consistent deployment.
 
-A responsive Streamlit frontend provides an intuitive interface for users to input house features (median income, house age, rooms, population, location) and receive instant price predictions. The frontend is also containerised for seamless deployment.
+A responsive Streamlit frontend provides an intuitive interface for users to input house features and receive instant price predictions. The frontend is also containerised for seamless deployment.
 
 Finally, the container is deployed on AWS infrastructure using Elastic Container Registry (ECR) for image storage and Elastic Container Service (ECS) with Fargate for serverless container orchestration, creating a fully cloud-deployed ML system.
 
-## 🏗️ Architecture
+## UI
 
 ![Frontend Image](frontend.png)
 
